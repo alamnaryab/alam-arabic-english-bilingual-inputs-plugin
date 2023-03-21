@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alam Arabic English bilingual inputs plugin</title>
+    <link rel="stylesheet" href="css/alam-bilang-input.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Alam Arabic and English bilingual inputs jQuery plugin</h1>
+            <p>If your form has English and Arabic mixed inputs in a sequance, it hurts data entry operaters to switch language for each input.</p>
+            <p>With this soultion they do not need to switch between languages for <b>English</b> and <b>Arabic</b> inputs, even they do not need to install both the language</p>
+            <hr>
+            <p>Try typing in all below inputs without changing your system input language</p>
+            <p>You can also emporarly disable it if you have mixed English and Arabic string to input</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row"> 
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="mb-0" for="txtNameEn">Name in English</label>
+                    <input type="text" id="txtNameEn" class="form-control txtLang" data-lang="en" value="Fakhre Alam" />
+                </div> 
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="mb-0" for="txtNameAr">Name in English</label>
+                    <input type="text" id="txtNameAr" class="form-control txtLang" data-lang="ar" value="فخر عا لم" />
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="mb-0" for="txtDepartmentEn">Department in English</label>
+                    <input type="text" id="txtDepartmentEn" class="form-control txtLang" data-lang="en" />
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="mb-0" for="txtDepartmentAr">Department in English</label>
+                    <input type="text" id="txtDepartmentAr" class="form-control txtLang" data-lang="ar" />
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="mb-0" for="txtEmailEn">Email in English</label>
+                    <input type="text" id="txtEmailEn" class="form-control txtLang" data-lang="en" />
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="mb-0" for="txtMobile">Mobile</label>
+                    <input type="text" id="txtMobile" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label class="mb-0" for="txtOther">Other</label>
+                    <input type="text" id="txtOther" class="form-control" />
+                </div>
+            </div> 
+        </div>
+    </div> 
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/alam-bilang-input.js"></script>
+    <script>
+        $(function(){
+            $('.txtLang').alamBiLangInput({
+                parentDivClass:'.form-group'    //Default is .form-group
+            });
+        });
+    </script>
+</body>
+</html>
