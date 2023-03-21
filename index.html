@@ -84,96 +84,94 @@
         <ol class="w-100">
             <li>Make inputs and wrap each input in a div with any class forexample <span class="badge badge-info">form-group</span>  </li>
             <li>Also provide a specific class to those inputs which you want to force English/Arabic  <span class="badge badge-info">txtLang</span></li>
-            <li>Also add a data attribute to these inputs specifying language of input, either  <span class="badge badge-warning">en</span> or  <span class="badge badge-success">ar</span> forexample <span class="badge badge-info">data-lang="ar"</span> </li>
+            <li>Also add a data attribute to these inputs specifying language of input, either  <span class="badge badge-warning">en</span> or  <span class="badge badge-success">ar</span> eg <span class="badge badge-info">data-lang="ar"</span> 
+                <br> Or you can specify <span class="badge badge-info">targetLang:'ar'</span> when applying plugin to inputs in jQuery
+            </li>
             <li>Add <strong>alam-bilang-input.css</strong>, <strong>jquery.js</strong> and <strong>alam-bilang-input.js</strong> to your page</li>
-            <li>Apply plugin to your specified inputs eg. <span class="badge badge-danger">$('.txtLang').alamBiLangInput();</span> </li>
+            <li>Apply plugin to your specified inputs eg. <span class="badge badge-danger">$('.txtLang').alamBiLangInput();</span> </li> 
         </ol>
 
-        <pre class="d-block py-4 bg-dark text-white">
+        <strong>Code in head tag</strong>
+<pre class="d-block py-4 bg-dark text-white">
+    &lt;link rel="stylesheet" href="css/bootstrap.min.css" />
 
-&lt;html lang="en">
-    &lt;head>
-        &lt;meta charset="UTF-8">
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
-        &lt;title>Alam Arabic English bilingual inputs plugin&lt;/title>
-        &lt;link rel="stylesheet" href="css/bootstrap.min.css" />
+    &lt;!--Required CSS File-->
+    &lt;link rel="stylesheet" href="css/alam-bilang-input.css" type="text/css" />
 
-        &lt;!--Required CSS File-->
-        &lt;link rel="stylesheet" href="css/alam-bilang-input.css" type="text/css" />
+    &lt;!--Required JS File-->
+    &lt;script src="js/jquery-3.4.1.min.js">&lt;/script>        
+    &lt;script src="js/alam-bilang-input.js">&lt;/script>
 
-        &lt;!--Required JS File-->
-        &lt;script src="js/jquery-3.4.1.min.js">&lt;/script>        
-        &lt;script src="js/alam-bilang-input.js">&lt;/script>
-
-        &lt;!--Apply plugin to all those inputs who has class="txtLang" -->
-        &lt;!--it will force it English or Arabic what ever specified as data-lang attribute in each input -->
-        &lt;script>
-            $(function(){
-                $('.txtLang').alamBiLangInput();
+    &lt;!--Apply plugin to all those inputs who has class="txtLang" -->
+    &lt;!--it will force it English or Arabic what ever specified as data-lang attribute in each input -->
+    &lt;script>
+        $(function(){
+            $('.txtLang').alamBiLangInput({
+                targetLang:'ar' //default is ar, it will be overidden if data attribute is provided
             });
-        &lt;/script>
+        });
+    &lt;/script>
+</pre>
 
-    &lt;/head>
-    &lt;body>  
-        &lt;div class="container">
-            &lt;div class="row"> 
-                &lt;div class="col-xs-12 col-sm-6 col-md-3">
-                    &lt;div class="form-group">
-                        &lt;label class="mb-0" for="txtNameEn">Name in English&lt;/label>
-                        &lt;input type="text" id="txtNameEn" class="form-control txtLang" data-lang="en" value="Fakhre Alam" />
-                    &lt;/div> 
-                &lt;/div>
+        
+<strong>Code in body tag</strong>
+<pre class="d-block py-4 bg-dark text-white">
+&lt;div class="container">
+    &lt;div class="row"> 
+        &lt;div class="col-xs-12 col-sm-6 col-md-3">
+            &lt;div class="form-group">
+                &lt;label class="mb-0" for="txtNameEn">Name in English&lt;/label>
+                &lt;input type="text" id="txtNameEn" class="form-control txtLang" data-lang="en" value="Fakhre Alam" />
+            &lt;/div> 
+        &lt;/div>
 
-                &lt;div class="col-xs-12 col-sm-6 col-md-3">
-                    &lt;div class="form-group">
-                        &lt;label class="mb-0" for="txtNameAr">Name in English&lt;/label>
-                        &lt;input type="text" id="txtNameAr" class="form-control txtLang" data-lang="ar" value="فخر عا لم" />
-                    &lt;/div>
-                &lt;/div>
-
-
-                &lt;div class="col-xs-12 col-sm-6 col-md-3">
-                    &lt;div class="form-group">
-                        &lt;label class="mb-0" for="txtDepartmentEn">Department in English&lt;/label>
-                        &lt;input type="text" id="txtDepartmentEn" class="form-control txtLang" data-lang="en" />
-                    &lt;/div>
-                &lt;/div>
-
-                &lt;div class="col-xs-12 col-sm-6 col-md-3">
-                    &lt;div class="form-group">
-                        &lt;label class="mb-0" for="txtDepartmentAr">Department in English&lt;/label>
-                        &lt;input type="text" id="txtDepartmentAr" class="form-control txtLang" data-lang="ar" />
-                    &lt;/div>
-                &lt;/div>
-
-                &lt;div class="col-xs-12 col-sm-6 col-md-3">
-                    &lt;div class="form-group">
-                        &lt;label class="mb-0" for="txtEmailEn">Email in English&lt;/label>
-                        &lt;input type="text" id="txtEmailEn" class="form-control txtLang" data-lang="en" />
-                    &lt;/div>
-                &lt;/div>
+        &lt;div class="col-xs-12 col-sm-6 col-md-3">
+            &lt;div class="form-group">
+                &lt;label class="mb-0" for="txtNameAr">Name in English&lt;/label>
+                &lt;input type="text" id="txtNameAr" class="form-control txtLang" data-lang="ar" value="فخر عا لم" />
+            &lt;/div>
+        &lt;/div>
 
 
-                &lt;div class="col-xs-12 col-sm-6 col-md-3">
-                    &lt;div class="form-group">
-                        &lt;label class="mb-0" for="txtMobile">Mobile&lt;/label>
-                        &lt;input type="text" id="txtMobile" class="form-control" />
-                    &lt;/div>
-                &lt;/div>
+        &lt;div class="col-xs-12 col-sm-6 col-md-3">
+            &lt;div class="form-group">
+                &lt;label class="mb-0" for="txtDepartmentEn">Department in English&lt;/label>
+                &lt;input type="text" id="txtDepartmentEn" class="form-control txtLang" data-lang="en" />
+            &lt;/div>
+        &lt;/div>
 
-                &lt;div class="col-xs-12 col-sm-6 col-md-3">
-                    &lt;div class="form-group">
-                        &lt;label class="mb-0" for="txtOther">Other&lt;/label>
-                        &lt;input type="text" id="txtOther" class="form-control" />
-                    &lt;/div>
-                &lt;/div> 
+        &lt;div class="col-xs-12 col-sm-6 col-md-3">
+            &lt;div class="form-group">
+                &lt;label class="mb-0" for="txtDepartmentAr">Department in English&lt;/label>
+                &lt;input type="text" id="txtDepartmentAr" class="form-control txtLang" data-lang="ar" />
+            &lt;/div>
+        &lt;/div>
+
+        &lt;div class="col-xs-12 col-sm-6 col-md-3">
+            &lt;div class="form-group">
+                &lt;label class="mb-0" for="txtEmailEn">Email in English&lt;/label>
+                &lt;input type="text" id="txtEmailEn" class="form-control txtLang" data-lang="en" />
+            &lt;/div>
+        &lt;/div>
+
+
+        &lt;div class="col-xs-12 col-sm-6 col-md-3">
+            &lt;div class="form-group">
+                &lt;label class="mb-0" for="txtMobile">Mobile&lt;/label>
+                &lt;input type="text" id="txtMobile" class="form-control" />
+            &lt;/div>
+        &lt;/div>
+
+        &lt;div class="col-xs-12 col-sm-6 col-md-3">
+            &lt;div class="form-group">
+                &lt;label class="mb-0" for="txtOther">Other&lt;/label>
+                &lt;input type="text" id="txtOther" class="form-control" />
             &lt;/div>
         &lt;/div> 
-
-    &lt;/body>
-&lt;/html>
-        </pre>
+    &lt;/div>
+&lt;/div> 
+ 
+</pre>
 
     </div>
 

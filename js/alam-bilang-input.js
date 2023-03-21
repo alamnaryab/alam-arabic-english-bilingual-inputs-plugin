@@ -7,7 +7,7 @@
 
 
         var opt = $.extend({ 
-            tl:'ar',
+            targetLang:'ar',
             parentDivClass:'.form-group'
         }, options );
         
@@ -15,13 +15,13 @@
             var elem = $(this);
             var langAttr = elem.attr('data-lang'); 
             if(langAttr){
-                opt.tl = langAttr;
+                opt.targetLang = langAttr;
             }
             pDiv = elem.parent();
             elem.addClass( "txt-alam-lang-input" ); 
             pDiv.attr('data-alam-bilang-enable',1);
-            pDiv.attr('data-alam-bilang-lang',opt.tl);
-            elem.before('<span class="btn-alam-lang-input" title="click to disable">'+opt.tl+'</span>');
+            pDiv.attr('data-alam-bilang-lang',opt.targetLang);
+            elem.before('<span class="btn-alam-lang-input" title="click to disable">'+opt.targetLang+'</span>');
             
             
 
