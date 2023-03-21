@@ -17,7 +17,7 @@
             if(langAttr){
                 opt.tl = langAttr;
             }
-            pDiv = elem.parents(opt.parentDivClass);
+            pDiv = elem.parent();
             elem.addClass( "txt-alam-lang-input" ); 
             pDiv.attr('data-alam-bilang-enable',1);
             pDiv.attr('data-alam-bilang-lang',opt.tl);
@@ -29,7 +29,7 @@
          
         //toggle enable disable
         $('body').on('click','.btn-alam-lang-input',function(e){
-            pDiv = $(this).parents(opt.parentDivClass);
+            pDiv = $(this).parent();
             var enableVal = pDiv.attr('data-alam-bilang-enable')==1?0:1; 
             pDiv.attr('data-alam-bilang-enable',enableVal);
             pDiv.find('.txt-alam-lang-input').focus();
@@ -111,7 +111,7 @@
 
         //keyup event of arabic inputs
         $('[data-alam-bilang-lang="ar"] .txt-alam-lang-input').keyup(function(e){
-            pDiv = $(this).parents(opt.parentDivClass);
+            pDiv = $(this).parent();
             if(pDiv.attr('data-alam-bilang-enable')==1){
                 var src = $(this).val(); 
                 var tStr = '';
@@ -126,7 +126,7 @@
  
         //keyup event of english inputs
         $('[data-alam-bilang-lang="en"] .txt-alam-lang-input').keyup(function(e){
-            pDiv = $(this).parents(opt.parentDivClass);
+            pDiv = $(this).parent();
             if(pDiv.attr('data-alam-bilang-enable')==1){
                 var src = $(this).val(); 
                 var tStr = '';

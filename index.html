@@ -86,7 +86,7 @@
             <li>Also provide a specific class to those inputs which you want to force English/Arabic  <span class="badge badge-info">txtLang</span></li>
             <li>Also add a data attribute to these inputs specifying language of input, either  <span class="badge badge-warning">en</span> or  <span class="badge badge-success">ar</span> forexample <span class="badge badge-info">data-lang="ar"</span> </li>
             <li>Add <strong>alam-bilang-input.css</strong>, <strong>jquery.js</strong> and <strong>alam-bilang-input.js</strong> to your page</li>
-            <li>Apply plugin to your specified inputs</li>
+            <li>Apply plugin to your specified inputs eg. <span class="badge badge-danger">$('.txtLang').alamBiLangInput();</span> </li>
         </ol>
 
         <pre class="d-block py-4 bg-dark text-white">
@@ -110,9 +110,7 @@
         &lt;!--it will force it English or Arabic what ever specified as data-lang attribute in each input -->
         &lt;script>
             $(function(){
-                $('.txtLang').alamBiLangInput({
-                    parentDivClass:'.form-group'    //Default is .form-group
-                });
+                $('.txtLang').alamBiLangInput();
             });
         &lt;/script>
 
@@ -183,9 +181,7 @@
     <script src="js/alam-bilang-input.js"></script>
     <script>
         $(function(){
-            $('.txtLang').alamBiLangInput({
-                parentDivClass:'.form-group'    //Default is .form-group
-            });
+            $('.txtLang').alamBiLangInput();
         });
     </script>
 </body>
